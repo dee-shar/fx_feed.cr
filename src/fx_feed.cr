@@ -30,6 +30,8 @@ class FxFeed
   def convert_price(
       from : String, to : String, amount : Int32) : JSON::Any
     JSON.parse(
-      @http_client.get("/#{API_PATH}/convert?from=#{from}&to=#{to}&amount=#{amount}&api_key=#{@api_key}", headers: @headers).body)
+      @http_client.get(
+        "/#{API_PATH}/convert?from=#{from}&to=#{to}&amount=#{amount}&api_key=#{@api_key}",
+        headers: @headers).body)
   end
 end
